@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>jquery form validation</title>
+
+<meta name="description" content="">
+
+<meta name="keywords" content="">
+
+<link href="" rel="stylesheet">
+
+<style type="text/css">
+
+	.form_input {
+		margin-bottom: 5px;
+    	margin-top: 5px;
+		width: 50%;
+	}
+
+	#userForm {
+    	color: #273f4a;
+
+	}
+
+
+
+	.form_td {
+
+		font-size: 12px;
+
+	    font-weight: bold;
+
+	    color: #182227;
+
+	    width: 300px;
+
+	}
+
+	.error {
+		color: red;
+	}
+
+</style>
+
+<script type="text/javascript" src="../jquery-1.8.3.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("#userForm :button").click(function() {
+			var texts = $("#userForm :text[name=gys]");
+			for (var i = 0; i < texts.length; i++) {
+				if($(texts[i]).val() == null || $(texts[i]).val() == '' || $(texts[i]).val() == undefined) {
+					$(texts[i]).next().addClass("error");
+					$(texts[i]).next().html("请输入供应商名称");
+				} else {
+					$(texts[i]).next().removeClass("error");
+					$(texts[i]).next().html("");
+				}
+			};
+
+			var khns = $("#userForm :text[name=khh]");
+			for (var i = 0; i < khns.length; i++) {
+				if($(khns[i]).val() == null || $(khns[i]).val() == '' || $(khns[i]).val() == undefined) {
+					$(khns[i]).next().addClass("error");
+					$(khns[i]).next().html("请输入开户行");
+				} else {
+					$(khns[i]).next().removeClass("error");
+					$(khns[i]).next().html("");
+				}
+			};
+
+			var cardNo = $("#userForm :text[name=cardNo]");
+			for (var i = 0; i < cardNo.length; i++) {
+				if($(cardNo[i]).val() == null || $(cardNo[i]).val() == '' || $(cardNo[i]).val() == undefined) {
+					$(cardNo[i]).next().addClass("error");
+					$(cardNo[i]).next().html("请输入银行卡号");
+				} else {
+					$(cardNo[i]).next().removeClass("error");
+					$(cardNo[i]).next().html("");
+				}
+			};
+		});
+	});
+
+</script>
+
+</head>
+
+<body>
+
+
+
+	<div style="float:center;">
+
+		<form id="userForm">
+
+			<table style="margin:auto;margin-top:100px;">
+
+				<tr style="background-color: #9E9E9E;">
+
+					<td class="form_td">供应商名称</td>
+
+					<td class="form_td">开户行</td>
+
+					<td class="form_td">银行卡号</td>
+
+				</tr>
+
+				<tr>
+
+					<td class="form_td">
+						<input class="form_input" type="text" name="gys"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="khh"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="cardNo"/>
+						<span></span>
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td class="form_td">
+						<input class="form_input" type="text" name="gys"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="khh"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="cardNo"/>
+						<span></span>
+					</td>
+				</tr>
+
+				<tr>
+
+					<td class="form_td">
+						<input class="form_input" type="text" name="gys"/>
+						<span></span>
+					</td>
+
+					<td class="form_td">
+						<input class="form_input" type="text" name="khh"/>
+						<span></span>
+					</td>
+
+					<td class="form_td">
+						<input class="form_input" type="text" name="cardNo"/>
+						<span></span>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="form_td">
+						<input class="form_input" type="text" name="gys"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="khh"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="cardNo"/>
+						<span></span>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="form_td">
+						<input class="form_input" type="text" name="gys"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="khh"/>
+						<span></span>
+					</td>
+					<td class="form_td">
+						<input class="form_input" type="text" name="cardNo"/>
+						<span></span>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="提交"/></td>
+				</tr>
+
+			</table>
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>

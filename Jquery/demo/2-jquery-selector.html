@@ -1,0 +1,75 @@
+<html>
+ <head>
+  <title>jQuery2</title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="../jquery-1.8.3.js"></script>
+  <style>
+	.title {
+		text-align: center;
+	}
+	.font-col {
+		background-color:red;
+	}
+  </style>
+  <script>
+	$(document).ready(function() {
+		//console.info($("h2,p,.center"));
+		//$("p").css("background", "#09F");
+		//$(".title").css("background","#09F");
+		//$("#box").css("background","#09F") // 获取并设置id为box的元素的背景颜色
+
+		//$("h2,p,.title").css("background", "#09F");
+		//$("h2.title").css("background","#09F");
+		//$("*").css("color","red"); // 改变所有元素的字体颜色
+		//console.info($("h2~p"));
+		//$(".title li").css("background-color", "#09F");
+		//$(".title>p").css("background-color","#09F");
+		//$("h2+dl").css("background-color","#09F");
+		//$("h2~dl").css("background-color","#09F");
+		//$("h2[title]").css("background-color","#09F"); // 改变含有title属性的<h2>元素的背景颜色
+		//$("[class=title]").css("background-color","#09F"); // 改变class属性的值为odds的元素的背景颜色
+		//$("li[class][title*=y]").css("background-color","#09F"); // 改变包含class属性，且title属性的值中含有y的<li>元素的背景颜色
+		//$("p:hidden").show(); // 获取隐藏的<p>元素，使其显示
+		//$("p:visible").hide(); // 获取显示的<p>元素，使其隐藏
+		console.info($("#id\\#a"));
+		console.info($("#id\\[2\\]"));
+		$("#div").addClass();
+	});
+  </script>
+ </head>
+
+ <body id="box">
+	<h2>DOM对象模型</h2>
+	<h2 class="title">DOM对象模型title样式</h2>
+	<p title="你最喜欢的书籍是">你最喜欢的书籍是？</p>
+	<ul class="title">
+		<li class="title" title="yyy">java深入浅出</li>
+		<li class="title">java从入门到精通</li>
+		<li class="title" title="yyy">Spring源码分析</li>
+	</ul>
+	<img src="./tip.jpg" title="温馨提示" width="250px" height="150px">
+	<strong>温馨提示：体胖多走路，人蠢多读书，两者都不为，早晚变成猪</strong>
+	<p title="你最喜欢的零食是">你最喜欢的零食是？</p>
+	<div class="title">
+		<p>测试子选择器</p>
+	</div>
+
+	<h2 title="最喜欢的明星">最喜欢的明星</h2>
+	<dl>猜猜1</dl>
+	<dl>猜猜2</dl>
+	<dl>猜猜3</dl>
+	<dl>猜猜4</dl>
+
+	<p>显示的p</p>
+	<p style="display:none;">隐藏的p</p>
+
+	<div id="id#a">aa</div>
+
+	<div id="id[2]">cc</div>
+
+	<div id="div">jQuery</div>
+ </body>
+</html>

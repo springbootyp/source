@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jquery event</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+#menu {
+	font: 12px verdana, arial, sans-serif; /* 设置文字大小和字体样式 */
+}
+
+#menu li {
+	float: left; /* 往左浮动 */
+	;
+	text-align: right;
+}
+
+#menu, #menu li {
+	list-style: none; /* 将默认的列表符号去掉 */
+	padding: 0; /* 将默认的内边距去掉 */
+	margin: 0; /* 将默认的外边距去掉 */
+	margin-right: 20px
+}
+
+.heightlight {
+	background-color: #607D8B;
+}
+
+.input_focus {
+	background-color: #03a9f459;
+}
+
+#nav li {
+	border-bottom: 1px solid #9E9E9E;
+	width: 200px;
+	border-bottom-style: dotted;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	color: #4d6875;
+	list-style: none;
+}
+
+</style>
+<script type="text/javascript" src="../jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$("#menu li").mouseover(function() { 
+        	$(this).addClass("heightlight");
+    	});
+    	$("#menu li").mouseout(function() { 
+        	$(this).removeClass("heightlight");
+    	});
+
+    	 $(document).keydown(function (event) {
+		    if (event.keyCode == "13") {
+		        alert("确认要提交么？");
+		    }
+		});
+
+    	/*$("[name=username]").focus(function() {
+    		$(this).addClass("input_focus");
+    	});*/
+
+    	$("input[name=testBind]").bind("click",function() {
+		    $("p").css("background-color","#F30");
+		});
+
+		/*$("input[name=event_1]").bind({
+		    mouseover: function () {
+		        $("ul").css("display", "none");
+		    },
+		    mouseout: function () {
+		        $("ul").css("display", "block");
+		    }
+		});*/
+
+		//$("input[name=event_1]").unbind("mouseout");
+
+		$("input[name=event_1]").hover(function(){
+		        $("ul").css("display","none");
+		     },
+		     function(){
+		        $("ul").css("display","block");
+		     }
+		);
+
+		/*$("body").toggle(
+			function () { // 第一次点击触发
+		      	alert(1);
+		    },
+			function () {  // 第二次点击触发
+		      	alert(2);
+		    },
+			function () {  // 第三次点击触发
+		    	alert(3);
+		    }
+		);*/
+		
+		//$("#tips").show("slow");
+
+		$("#menuBtn").click(function() {
+			$("#nav li:gt(5):not(:last)").toggle();
+		});
+
+		$("button[name=fadein_btn]").click(function(){
+		    $("img").fadeIn("slow");
+		});
+		$("button[name=fadeout_btn]").click(function(){
+		    $("img").fadeOut(1000);
+		});
+
+
+		$("h2").click(function(){
+			$(".txt").slideUp("slow");
+		    $(".txt").slideDown("slow");
+		});
+	})
+</script>
+</head>
+<body>
+
+	<div class="center">
+		<ul id="menu">
+		 <li><a href="#">首页</a></li>
+		 <li><a href="#">服装城</a></li>
+		 <li><a href="#">电器城</a></li>
+		 <li><a href="#" class="last">家私城</a></li>
+		</ul>
+	<div>
+<br>
+	用户名：<input type="text" name="username" /><br><br>
+	密码：<input type="text" name="password" /><br>
+
+	<p>测试绑定事件</p>
+
+	<input type="button" name="testBind" value="测试绑定事件" />
+	<input type="button" name="event_1" value="测试绑定多个事件" />
+	
+	<br />
+
+	<div id="tips" style="display:none;">
+		提示信息
+	</div>
+
+	<div>
+		<ul id="nav">
+		 <li>手机通讯、数码电器</li>
+		 <li>食品饮料、酒水、蔬菜</li>
+		 <li>进口食品、进口纽埃</li>
+		 <li>美容化妆、个人护理</li>
+		 <li>母婴用品、个人护理</li>
+		 <li>厨卫清洁、纸、清洁剂</li>
+
+		 <li>家具家私、锅具餐具</li>
+		 <li>生活电器，汽车生活</li>
+		 <li>电脑、外设、办公用品</li>
+		</ul>
+	<div>
+
+	<input id="menuBtn" type="button" value="伸缩菜单"><br><br><br><br><br>
+
+	<img src="images/1.jpg" style="width:200px;height:200px;display:none">
+	<button name="fadein_btn" id="imgText">淡入淡出效果</button>
+	<button name="fadeout_btn" id="imgText">淡入淡出效果毫秒为单位</button>
+
+	<h2>slideDown</h2>
+	<p class="txt">txt</p>
+	<p class="txt">txt</p>
+</body>
+</html>

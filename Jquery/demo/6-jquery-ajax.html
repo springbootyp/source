@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery ajax</title>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$.ajax({
+		   	type: "POST",
+		   	url: "student",
+		   	data: "id=John&location=Boston",
+		   	success: function(msg){
+		     	console.info( "Data Saved: " + msg );
+		   	}
+		});
+		
+		$("#result").load("data.txt"); //返回data.txt中输出的数据
+	})
+	
+	/* $(document).ready(function(){
+	    $("button").click(function(){
+	        $("#ret").text($("form").serialize());
+	    });
+	}); */
+	
+	$(document).ready(function(){
+	    $("button").click(function(){
+	         var x = $("form").serializeArray();
+	         $.each(x, function(i, field){
+	            $("#results").append(field.name + ":" + field.value + " ");
+	        });
+	    });
+	});
+</script>
+</head>
+<body>
+	<div id="result"></div>
+	
+	<form action="">
+		第一个名称: <input type="text" name="FirstName" value="Mickey" /><br>
+		最后一个名称: <input type="text" name="LastName" value="Mouse" /><br>
+	</form>
+	<button>序列化表单值</button>
+	<div id="ret"></div>
+	<div id="results"></div>
+</body>
+</html>

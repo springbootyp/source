@@ -1,0 +1,47 @@
+<html>
+ <head>
+  <title>DOM对象模型</title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="../jquery-1.8.3.js"></script>
+  <script>
+	$(document).ready(function() {
+		//alert("Hello World jquery");
+		var txtName = document.getElementById("txtName"); //DOM对象
+		console.info(txtName);
+		var $txtName = $(txtName);   //jQuery对象
+		console.info($txtName);
+
+		console.info($txtName[0]);
+		
+		$txtName.css("font-size", "50px");
+		
+		$("#txtName").addClass("text");
+		
+		console.info($("#txtName").next().html());
+	});
+  </script>
+  <style>
+	.text {
+		text-align: center;
+	}
+  </style>
+ </head>
+
+ <body>
+	<h2>DOM对象模型</h2>
+	<p title="你最喜欢的零食是">你最喜欢的书籍是？</p>
+	<ul>
+		<li>java深入浅出</li>
+		<li>java从入门到精通</li>
+		<li>Spring源码分析</li>
+	</ul>
+	<img src="./tip.jpg" title="温馨提示" width="250px" height="150px">
+	<strong>温馨提示：体胖多走路，人蠢多读书，两者都不为，早晚变成猪</strong>
+
+	<p id="txtName">测试</p>
+	<span>相邻元素</span>
+ </body>
+</html>

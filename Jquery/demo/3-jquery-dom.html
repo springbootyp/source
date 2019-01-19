@@ -1,0 +1,126 @@
+<html>
+ <head>
+  <title>jQuery2</title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="../jquery-1.8.3.js"></script>
+  <style>
+	.title {
+		text-align: center;
+	}
+	.back-col {
+		background-color:red;
+	}
+	.font-col {
+		color: green;
+	}
+
+	.xinshou {
+		    background-color: #2196F3;
+		    color: #fff;
+			width: 80px;
+	}
+	.mouseover {
+		    background-color: #03a9f44a;
+		    width: 150px;
+		    color: #fff;
+	}
+
+	.img{
+		width: 100px;
+		height: 100px;
+	}
+  </style>
+  <script>
+	$(document).ready(function() {
+		//$("#cc").css("border","5px solid #f5f5f5");
+		//$("#cc").css({"border":"5px solid #f5f5f5","opacity":"0.5"});
+		$("#img").css("border", "2px solid red");
+
+		//$("#div").addClass("back-col");
+		
+		//$("#div").toggleClass("font-col");
+
+		$("#menu li").on("mouseover", function() {
+			$(this).toggleClass("mouseover");
+		});
+		$("#menu li").on("mouseout", function() {
+			$(this).removeClass("mouseover");
+		});
+
+		//console.info($("div.left").html());
+		//console.info($("div.left").text('新手上路'));
+
+		//console.info($(".img").attr("alt"));
+
+		$(".img").attr({width:"250",height:"200"});
+
+		$(".img").removeAttr("alt");
+
+		//console.info($("#test").val());
+
+		//console.info($("#test").val(456));
+
+
+		//$("#dy li:eq(1)").replaceWith($("<li>sss</li>"));
+		$("<li>sss</li>").replaceAll($("#dy li:eq(1)"));
+
+		$("#dy li:eq(1)").clone(true).appendTo("ul");
+
+		//$("#test").remove();
+		//$("#test").detach();
+		$("p").detach();
+		$("#emptySpan").empty();
+
+		//console.info($("body").children());
+
+		//$("#dy li:eq(1)").next().css("background-color", "#F06");
+		//$("#dy li:eq(1)").prev().css("background-color", "#F06");
+		$("#dy li:eq(1)").siblings().css("background-color", "#F06");
+
+		//console.info($("#emptySpan").parents().css("background-color", "red"));
+
+		console.info($("#cssdom").height(100));
+		console.info($("#cssdom").width(200));
+		console.info($("#cssdom").offset({left:18,top:480.15625}));
+	});
+  </script>
+ </head>
+
+ <body id="box">
+ 
+	<p>Hello</p> how are <p>you?</p>
+
+	<h3 class="xinshou">新手上路</h3>
+	<ul id="menu">
+		<li>注册登录</li>
+		<li>易付宝账户激活</li>
+		<li>易付宝实名认证</li>
+		<li>密码相关</li>
+		<li>会员购买</li>
+	</ul>	
+
+	<div id="id#a">aa</div>
+
+	<div id="cc" class="left">cc</div>
+
+	<div id="div" class="left">jQuery</div>
+
+	<img class="img" src="images/1.jpg" alt="测试图片">
+
+	<input id="test" type="text" value="123" />
+
+	<h3>热门动画排行</h3>
+	<ul id="dy">
+		<li>名侦探柯南</li>
+		<li>死神</li>
+		<li>海贼王</li>
+	</ul>
+
+	<p id="emptySpan">test empty</p><br>
+
+	
+ </body>
+</html>
